@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <mess></mess>
+    </div>
+
+
+    <script>
+        Vue.component("mess", {
+            template: "<h1>eatme -{{msg}} {{msg1}}</h1>",
+            data: function () {
+                return {
+                    msg: "csc",
+                    msg1: "yhu"
+                }
+            }
+        })
+
+        var demo = new Vue({
+            el: '#demo',
+            data: {
+                // msg: "onesr"
+            },
+            // methods: {}
+        })
+
+    </script>
+</body>
+
+</html>

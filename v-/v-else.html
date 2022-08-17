@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <h3>Hello Vue</h3>
+        <h3 v-if="yes">Yes!</h3>
+        <h3 v-else="yes">No!</h3>
+        <h3 v-if="no">age={{age}}</h3>
+        <h3 v-else="no">age={{age}} plz</h3>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                yes:true,
+                no:false,
+                age:28
+            }
+        })
+
+    </script>
+</body>
+</html>

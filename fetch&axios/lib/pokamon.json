@@ -1,0 +1,34 @@
+{
+    "data": [
+      {
+        "Movie_ID": 2,
+        "Overall_rating": 8.6,
+        "Title": "Parasite",
+        "Description": "A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks. But their easy life gets complicated when their deception is threatened with exposure."
+      },
+      {
+        "Movie_ID": 9,
+        "Overall_rating": 8.4,
+        "Title": "1917",
+        "Description": "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap."
+      },
+      {
+        "Movie_ID": 7,
+        "Overall_rating": 8.4,
+        "Title": "Avengers: Endgame",
+        "Description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
+      },
+      {
+        "Movie_ID": 5,
+        "Overall_rating": 8,
+        "Title": "Shoplifters",
+        "Description": "A family of small-time crooks take in a child they find outside in the cold."
+      },
+      {
+        "Movie_ID": 10,
+        "Overall_rating": 8,
+        "Title": "Invisible Life",
+        "Description": "Kept apart by a terrible lie and a conservative society, two sisters born in Rio de Janeiro make their way through life each believing the other is living out her dreams half a world away."
+      }
+    ]
+  }

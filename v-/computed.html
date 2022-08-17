@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="demo">
+        <input v-model="mess"></input>
+        <li v-for="value in getdatalist">{{value}}</li>
+    </div>
+
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data: {
+                mess: "",
+                datalist: [
+                    "aaa",
+                    "abb",
+                    "bdd",
+                    "abd",
+                    "cca"
+                ]
+            },
+            computed: {
+                getdatalist() {
+                    return this.datalist.filter(item =>item.indexOf(this.mess) > -1);
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

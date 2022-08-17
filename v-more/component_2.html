@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <mess :todo-data="word"></mess>
+    </div>
+    <script>
+        var todoItem = Vue.extend({
+            template:"<li>{{text}}</li>",
+            props:{
+                text:{
+                    type:String,
+                    default:''
+                }
+            }
+        })
+
+        var Mess = Vue.extend({
+            template:'<ul><todo-item v-for="value,index in todoData" v-text="value.text"></todo-item></ul>',
+                props:{
+                    todoData:{
+                        type:Array,
+                        default:[]
+                    }
+                },
+                components:{
+                    todoItem:todoItem
+                }
+        })
+
+        Vue.component('mess',Mess);
+
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                word:[
+                    {id:0,text:"apple"},
+                    {id:1,text:"bee"},
+                    {id:2,text:"frog"}
+                ]}
+            }
+        )
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var allowed = "cad", words = ["cc", "acd", "b", "ba", "bac", "badkko", "ac", "d"]
+    var countConsistentStrings = function (allowed, words) {
+        var c = 0;
+        for (var i = 0; i < words.length; i++) {
+            var arr = words[i].split("");
+            var d = 0;
+            for (var j = 0; j < words[i].length; j++) {
+                console.log(i, j, arr[j])
+                if (!allowed.includes(arr[j])) {
+                    d = 1;
+                }
+                if ((j == words[i].length - 1) && (d == 1)) {
+                    c++;
+                    console.log("c", c)
+                }
+            }
+            console.log("-----")
+            // }
+        }
+        console.log(words.length - c);
+    };
+
+    countConsistentStrings(allowed, words);
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <button @click="getaxios">get</button>
+        <!-- <p>{{datalist}}</p> -->
+        <ul>
+            <li v-for="value in datalist">
+                <h3>{{value.Title}}</h3>
+                <h4>{{value.Description}}</h4>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // fetch("./pokamon.json").then(res=>res.json()).then(res=>{
+        //     console.log(res)
+        // })
+
+        new Vue({
+            el: "#demo",
+            data: {
+                datalist: []
+            },
+            methods: {
+                getaxios() {
+                    axios.get("../lib/pokamon.json").then(res =>{
+                        console.log(res.data.data); //自動包裝data屬性
+                        this.datalist=res.data.data;
+                    }).catch(err => {
+                        console.log(err);
+                        // this.datalist = res.data
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

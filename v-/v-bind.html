@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <!-- {{message}} -->
+        <a v-bind:href="url">click</a>
+        <p v-bind:past="fast" v-on:click="change">{{fast}}</p>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                // message: "hello Vue!!"
+                url:"https://www.imooc.com/",
+                fast:"test"
+            },
+            methods:{
+                change(){
+                    this.fast="jojo"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

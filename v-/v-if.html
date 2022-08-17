@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <h3>Hello Vue</h3>
+        <h3 v-if="yes">Yes!</h3>
+        <h3 v-if="no">No!</h3>
+        <h3 v-if="age>=18">age={{age}}</h3>
+        <h3 v-if="name.indexOf('jack')>=0">name={{name}}</h3>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                yes:true,
+                no:false,
+                age:55,
+                name:"abs"
+            }
+        })
+
+    </script>
+</body>
+</html>

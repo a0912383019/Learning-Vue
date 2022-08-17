@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <h3 v-text="'今天是'+year+'年'+month+'月'"></h3>
+        <p>今天是{{year}}年{{month}}月</p>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                year: new Date().getFullYear(),
+                month: new Date().getMonth()+1
+            }
+        })
+    </script>
+</body>
+</html>

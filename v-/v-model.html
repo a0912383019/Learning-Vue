@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <!-- {{message}} -->
+        <input v-model="mess" placeholder="edit" @change="findout"></input>
+        <li v-for="value in arr1">{{value}}</li>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                // message: "hello Vue!!"
+                mess:"",
+                arr:[
+                    "apple",
+                    "bee",
+                    "cat",
+                    "daddy",
+                    "early"
+                ],arr1:[
+                    "apple",
+                    "bee",
+                    "cat",
+                    "daddy",
+                    "early"
+                ]
+            },
+            methods:{
+                findout(){
+                    console.log(this.mess)
+                    var n=this.mess;
+                    var newarr= this.arr.filter(function(item){
+                        // console.log("a");
+                        // console.log(n);
+                        // console.log(item.indexOf(this.mess));
+                        return (item.indexOf(n)>-1)
+                    })
+                    console.log(newarr)
+                    this.arr1=newarr;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

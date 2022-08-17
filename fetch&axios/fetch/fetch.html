@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <button @click="getfetch">get</button>
+        <!-- <p>{{datalist}}</p> -->
+        <ul>
+            <li v-for="value in datalist">
+                <h3>{{value.Title}}</h3>
+                <h4>{{value.Description}}</h4>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // fetch("./pokamon.json").then(res=>res.json()).then(res=>{
+        //     console.log(res)
+        // })
+
+        new Vue({
+            el: "#demo",
+            data: {
+                datalist: []
+            },
+            methods: {
+                getfetch() {
+                    fetch("../lib/pokamon.json").then(res => res.json()).then(res => {
+                        console.log(res);
+                        this.datalist = res.data
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

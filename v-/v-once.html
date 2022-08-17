@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="demo">
+        <p v-once>This will never change : {{mess}}</p>
+        <p>你好</p>
+        <div>
+            <p v-once>{{mess}}</p>
+        </div>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                mess:"Hello vue!!"
+            }
+        })
+    </script>
+</body>
+</html>

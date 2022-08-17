@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <ul>
+            <input type="checkbox" v-model="isallcheck" @change="handcheckall">
+            <li v-for="item in shop">
+                <input type="checkbox" v-model="count" :value="item" @change="handcheck">
+                {{item}}
+                <button @click="del(item)">del</button>
+                {{item.number}}
+                <button @click="item.number++">add</button>
+            </li>
+        </ul>
+        <p>{{count}}</p>
+        <p>{{sum()}}</p>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data: {
+                isallcheck: false,
+                count: [],
+                total: 0,
+                shop: [
+                    { name: "item1", id: 1, number: 1, price: "25" },
+                    { name: "item2", id: 2, number: 2, price: "35" },
+                    { name: "item3", id: 3, number: 3, price: "75" },]
+            },
+            methods: {
+                sum() {
+                    var tt = 0;
+                    this.count.forEach(ele => {
+                        tt += parseInt(ele.price * ele.number);
+                    });
+                    // console.log(tt)
+                    return tt
+                },
+                handcheckall() {
+                    // console.log(this.isallcheck)
+                    if (this.isallcheck) {
+                        this.count = this.shop;
+                    } else {
+                        this.count = [];
+                    }
+                },
+                handcheck() {
+                    if (this.count.length == this.shop.length) {
+                        this.isallcheck = true;
+                    } else {
+                        this.isallcheck = false;
+                    }
+                },
+                del(a) {
+                    var c = a.number--;
+                    if (c > 1) {
+                        return c;
+                    } else {
+                        return a.number = 1;
+                    }
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

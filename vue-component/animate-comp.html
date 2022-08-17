@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <transition mode="out-in">
+            <component :is="type"></component>
+        </transition>
+        <button @click="change">Switch</button>
+    </div>
+    <script>
+        Vue.component("child1", {
+            template: "<div>childone</div>"
+        })
+        Vue.component("child2", {
+            template: "<div>childtwo</div>"
+        })
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                type: "child1"
+            },
+            methods: {
+                change: function () {
+                    this.type = this.type === "child1" ? "child2" : "child1"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

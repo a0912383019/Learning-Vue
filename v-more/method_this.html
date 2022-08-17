@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <!-- {{message}} -->
+        <input type="button" name="" id="" value="click1" onclick="alert(11)">
+        <input type="button" name="" id="" value="click2" v-on:click="show()">
+    </div>
+    <script>
+
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                A:"fly"
+            },
+            methods:{
+                show:function(){
+                    alert(this.A);
+                }
+            }
+        })
+
+        demo.A="retry"
+    </script>
+</body>
+</html>

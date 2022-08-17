@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        
+        <input type="radio" v-model="line" id="flash" value="飛機">
+        <label for="flash">plane</label>
+        <input type="radio" v-model="line" id="nutte" value="郵輪">
+        <label for="nutte">boat</label>
+        <br>
+        <span>Picked : {{line}} </span>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data: {
+                line:"一起旅行"
+            }
+        })
+
+    </script>
+</body>
+
+</html>

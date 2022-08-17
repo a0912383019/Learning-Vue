@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <button @click="a--">a-1</button>
+        <p>{{mess}}</p>
+    </div>
+
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                a:22,
+                mess:"22"
+            },
+            watch:{
+                a:function(n,o){
+                    this.mess="new num = "+n+" old num = "+o
+                }
+            }
+        })
+    </script>
+</body>
+</html>

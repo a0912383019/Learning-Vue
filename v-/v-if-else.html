@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <h3>Hello Vue</h3>
+        <h3 v-if="yes>=40">high 40</h3>
+        <h3 v-else-if="yes>=30">high 30</h3>
+        <h3 v-else-if="yes>=20">high 20</h3>
+        <h3 v-else-if="yes>=10">high 10</h3>
+        <h3 v-else="yes">low</h3>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                yes:-5
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <div>
+                <input type="text" v-model="name">
+                <br>
+                <input type="radio" value="男" v-model="gender">男
+                <input type="radio" value="女" v-model="gender">女
+                <br>
+                <select v-model="age">
+                    <option selected>20歲以下</option>
+                    <option>21-30歲</option>
+                    <option>31-40歲</option>
+                    <option>41-50歲</option>
+                    <option>51歲以上</option>
+                </select>
+                <br>
+                <input type="checkbox" v-model="favor" value="音樂">音樂
+                <input type="checkbox" v-model="favor" value="電影">電影
+                <input type="checkbox" v-model="favor" value="運動">運動
+                <br>
+                <input type="checkbox" v-model="ismember" checked>加入會員
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                name:"Jimmy",
+                gender:"男",
+                age:"21-30歲",
+                favor:["音樂"],
+                ismember:true
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

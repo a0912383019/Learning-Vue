@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <div @click="comp='one'">元件一</div>
+        <div @click="comp='two'">元件二</div>
+        <aaa :is="comp"><h1>{{comp}}</h1></aaa>
+    </div>
+
+    <script>
+
+
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                comp:"請選擇"
+            },
+            components:{
+                one:{
+                    template:"<h1>我是元件一</h1>"
+                },
+                two:{
+                    template:"<h1>我是元件二</h1>"
+                }
+            }
+        })
+
+</script>
+</body>
+</html>

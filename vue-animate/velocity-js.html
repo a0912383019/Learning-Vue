@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.6/velocity.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <transition name="fade" 
+        @before-enter="handleBeforeEnter" 
+        @enter="handleEnter" 
+        @after-enter="handleAfterEnter">
+            <div v-show="show">欢迎来到冬天</div>
+        </transition>
+        <button @click="handleClick">点击我</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function () {
+                    this.show = !this.show
+                },
+                handleBeforeEnter: function (el) {
+                    console.log(el);
+                    el.style.opacity = 0.5;
+                    el.style.color="blue";
+                },
+                handleEnter: function (el, done) {
+                    console.log(el);
+                    Velocity(el, { opacity: 1 }, { duration: 1000, complete: done })
+                    // setTimeout(() => {
+                    //     el.style.color = 'red'
+                    //     done()
+                    // }, 2000)
+                    // el.style.color="blue";
+
+                },
+                handleAfterEnter: function (el) {
+                    console.log(el);
+                    alert('动画结束')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

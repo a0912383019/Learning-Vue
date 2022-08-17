@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./node_modules/swiper/swiper.min.css">
+    <script src="./node_modules/swiper/swiper-bundle.js"></script>    
+    <style>
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <div class="swiper adrf">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="data in datalist">
+                    {{data}}
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data: {
+                datalist:[]
+            },
+            mounted() {
+                setTimeout(() => {
+                    this.datalist=["111","222","333"]
+                }, 2000);
+            },
+            updated(){
+                new Swiper(".adrf",{
+                    loop:true,
+                    pagination:{
+                        el:".swiper-pagination"
+                    }
+                })
+                console.log(document.querySelector(".swiper-slide"))
+            }
+        })
+    </script>
+</body>
+
+</html>

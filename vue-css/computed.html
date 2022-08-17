@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <table>
+            <tr>
+                <td>生日:{{getbirth}}</td>
+            </tr>
+            <tr>
+                <td>age:{{age}}</td>
+            </tr>
+            <tr>
+                <td>address:{{address}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data:{
+                bir:1014228510514,
+                age:22,
+                address:"Taichung city"
+            },
+            computed:{
+                getbirth:function(){
+                    var m=new Date(this.bir);
+                    return m.getFullYear()+"年"+(m.getMonth())+"月"+(m.getDay())+"日"
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
